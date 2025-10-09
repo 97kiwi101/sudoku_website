@@ -1,4 +1,4 @@
-/* --- General & Home Page Styles --- */
+
 body {
     font-family: sans-serif;
     padding: 20px;
@@ -45,7 +45,7 @@ body {
 }
 
 
-/* --- Sudoku Game Styles --- */
+
 .board-container {
     text-align: center;
     margin: 0 auto;
@@ -63,7 +63,6 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Prepare the cell for 3D transformations */
 .sudoku-grid td {
     width: 40px;
     height: 40px;
@@ -71,7 +70,6 @@ body {
     font-size: 20px;
     border: 1px solid #ccc;
     padding: 0;
-    /* NEW: Set up the 3D perspective */
     perspective: 1000px;
 }
 .sudoku-grid tr:nth-child(3n) td { border-bottom: 3px solid black; }
@@ -81,7 +79,6 @@ body {
     font-weight: bold;
 }
 
-/* NEW: The flipper element that will rotate */
 .cell-flipper {
     position: relative;
     width: 100%;
@@ -90,26 +87,25 @@ body {
     transform-style: preserve-3d;
 }
 
-/* NEW: Class added by JS to trigger the flip */
 .is-flipped {
     transform: rotateY(180deg);
 }
 
-/* NEW: Front and Back faces of the cell */
+
 .cell-front, .cell-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* NEW: The back face is green and initially hidden */
+
 .cell-back {
-    background-color: #28a745; /* Bootstrap success green */
+    background-color: #28a745; 
     color: white;
     font-weight: bold;
     transform: rotateY(180deg);
@@ -124,7 +120,7 @@ body {
     padding: 0;
 }
 
-/* NEW: Animate incorrect answers instead of just coloring them */
+
 .shake {
     animation: shake 0.5s;
 }
@@ -140,10 +136,14 @@ body {
 .incorrect { color: red; }
 
 
-/* --- NEW STYLES FOR ICON BUTTONS --- */
+
 .btn-icon {
-    width: 48px;      /* Fixed width */
-    height: 48px;     /* Fixed height */
-    border-radius: 50%; /* Makes the button circular */
-    font-size: 1.25rem; /* Makes the icon larger */
+    width: 48px;     
+    height: 48px;    
+    border-radius: 50%; 
+    font-size: 1.25rem; 
+}
+
+.sudoku-grid td.highlighted {
+    background-color: #e0f7fa; /* A nice, light blue */
 }
